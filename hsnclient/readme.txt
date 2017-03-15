@@ -1,0 +1,3 @@
+1、hessian的服务端是通过标准J2ee容器做Connector的；
+2、服务通过在web.xml中配置成servlet的形式对外发布；
+3、客户端和服务端通信底层使用http协议，上层使用hessian2专用二进制协议封装消息；
