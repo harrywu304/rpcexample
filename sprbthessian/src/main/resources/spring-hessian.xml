@@ -10,18 +10,9 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <!-- 客户端Hessian代理工厂Bean -->
-    <bean id="helloService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
-        <!-- 请求代理Servlet路径 -->      
-        <property name="serviceUrl">
-        	<!-- 
-            <value>http://localhost:8080/sprhsnserver/sc/hello</value>
-             -->
-            <value>http://localhost:8080/sc/hello</value>
-        </property>
-        <!-- 接口定义 -->
-        <property name="serviceInterface">
-            <value>org.pub.hello.HelloService</value>
-        </property>
+    <bean id="helloServiceImpl" class="org.pub.hello.impl.HelloServiceImpl"></bean>
+    <bean name="/sc/hello" class="org.springframework.remoting.caucho.HessianServiceExporter">
+        <property name="service" ref="helloServiceImpl" />
+        <property name="serviceInterface" value="org.pub.hello.HelloService" />
     </bean>
 </beans>

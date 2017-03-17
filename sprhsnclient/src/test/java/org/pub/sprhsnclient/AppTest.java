@@ -16,7 +16,7 @@ public class AppTest {
         ApplicationContext contex = 
                 new ClassPathXmlApplicationContext("applicationContext.xml");
        // 获得客户端的Hessian代理工厂bean  
-        HelloService i = (HelloService) contex.getBean("hessianClient");  
+        HelloService i = (HelloService) contex.getBean("helloService");  
        System.out.println(i.sayHello("demo"));  
     }
 }
