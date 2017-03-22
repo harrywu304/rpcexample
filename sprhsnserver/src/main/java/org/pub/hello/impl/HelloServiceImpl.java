@@ -1,5 +1,8 @@
 package org.pub.hello.impl;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.pub.hello.HelloService;
 import org.pub.hello.bean.User;
 import org.springframework.stereotype.Component;
@@ -13,9 +16,16 @@ public class HelloServiceImpl implements HelloService {
 	}
 
 	@Override
-	public String sayGoodbye(User user) {
-		String name = user.getName();
-		return "Goodbye " + name;
+	public Map sayGoodbye(String name) {
+		Map<String,String> rt = new HashMap<String,String>();
+		rt.put("echo", "Goodbye " + name);
+		return rt;
+	}
+
+	@Override
+	public User echo(User user) {
+		user.setName("demo");
+		return user;
 	}
 
 }
