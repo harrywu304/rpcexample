@@ -1,8 +1,17 @@
 package org.pub.hello.bean;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 	
-	public String name;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2808076612626496230L;
+
+	public String name; 
+	
+//	public int sex;
 
 	public String getName() {
 		return name;
@@ -11,6 +20,14 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+//	public int getSex() {
+//		return sex;
+//	}
+//
+//	public void setSex(int sex) {
+//		this.sex = sex;
+//	}
 
 	@Override
 	public String toString() {

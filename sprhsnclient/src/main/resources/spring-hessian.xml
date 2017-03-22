@@ -18,7 +18,7 @@
             
             <value>http://localhost:8080/sc/hello</value>
              -->
-            <value>http://localhost:8080/sprhsnserverjersey/sc/hello</value>
+            <value>http://localhost:8080/sprhsnserver/sc/hello</value>
         </property>
         <!-- 接口定义 -->
         <property name="serviceInterface">
